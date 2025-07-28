@@ -1,8 +1,9 @@
 import runGame from '../engine.js'
+import { getRandomInt } from '../utils/random.js'
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.'
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+const MIN = 1
+const MAX = 100
 
 const gcd = (a, b) => {
   let x = Math.abs(a)
@@ -16,8 +17,8 @@ const gcd = (a, b) => {
 }
 
 const makeRound = () => {
-  const a = getRandomInt(1, 100)
-  const b = getRandomInt(1, 100)
+  const a = getRandomInt(MIN, MAX)
+  const b = getRandomInt(MIN, MAX)
   const question = `${a} ${b}`
   const correctAnswer = String(gcd(a, b))
   return [question, correctAnswer]

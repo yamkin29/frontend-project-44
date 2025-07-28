@@ -1,14 +1,15 @@
 import runGame from '../engine.js'
+import { getRandomInt, randomChoice } from '../utils/random.js'
 
 const DESCRIPTION = 'What is the result of the expression?'
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
-const options = ['+', '-', '*']
+const OPTIONS = ['+', '-', '*']
+const MIN = 1
+const MAX = 50
 
 const makeRound = () => {
-  const a = getRandomInt(1, 50)
-  const b = getRandomInt(1, 50)
-  const option = options[getRandomInt(0, options.length - 1)]
+  const a = getRandomInt(MIN, MAX)
+  const b = getRandomInt(MIN, MAX)
+  const option = randomChoice(OPTIONS)
 
   let result
   switch (option) {

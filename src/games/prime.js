@@ -1,8 +1,9 @@
 import runGame from '../engine.js'
+import { getRandomInt } from '../utils/random.js'
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+const MIN = 2
+const MAX = 200
 
 const isPrime = (n) => {
   if (n < 2) return false
@@ -13,7 +14,7 @@ const isPrime = (n) => {
 }
 
 const makeRound = () => {
-  const number = getRandomInt(2, 200)
+  const number = getRandomInt(MIN, MAX)
   const correctAnswer = isPrime(number) ? 'yes' : 'no'
   return [String(number), correctAnswer]
 }
