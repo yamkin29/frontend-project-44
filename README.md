@@ -14,15 +14,15 @@
 
 ## Установка
 
-git clone https://github.com/yamkin29/frontend-project-44.git
-cd frontend-project-44
-make install
-npm link
+- git clone https://github.com/yamkin29/frontend-project-44.git
+- cd frontend-project-44
+- make install
+- npm link
 
 ## Разработка
 
-make lint
-make publish
+- make lint
+- make publish
 
 ## Запуск игр
 
